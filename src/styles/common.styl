@@ -1,0 +1,52 @@
+@font-face {
+  font-family Raleway
+  src: url('../assets/fonts/raleway/Raleway-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/raleway/Raleway-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../assets/fonts/raleway/Raleway-regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../assets/fonts/raleway/Raleway-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../assets/fonts/raleway/Raleway-regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family Poppins
+  src: url('../assets/fonts/poppins/Poppins-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/poppins/Poppins-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../assets/fonts/poppins/Poppins-regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../assets/fonts/poppins/Poppins-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../assets/fonts/poppins/Poppins-regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+body
+  background-color #16131a
+  font-family Poppins
+
+.hidden
+  display: none
+
+.slide-enter-active, .slide-leave-active
+  transition transform 0.25s cubic-bezier(0.35, 0, 0.25, 1)
+
+.slide-enter
+  transform translateX(-100%)
+
+.slide-enter-active
+  transition-delay .25s
+
+.slide-leave-active
+  transform translateX(-100%)
+  opacity 1
+
+.button-primary
+  box-shadow 0 1px 16px 1px rgba(45, 237, 209, 0)
+  border-radius 5px
+  background-color #00d1b7
+  padding 17px 40px
+  border 0
+  color white
+  display inline-block
+  font-family Raleway
+  text-transform uppercase
+  font-weight bold
+  transition box-shadow .25s ease-in
+  cursor: pointer;
+  &:hover
+    box-shadow 0 3px 16px 1px rgba(45, 237, 209, 0.5)
