@@ -3,6 +3,8 @@
       <div class="ink-bar">
         <div class="ink" :style="{ transform: `translate3d(${offset}px,0,0)`, width: `${itemWidth}px` }"></div>
       </div>
+      <div class="layout-row layout-align-space-between-center">
+
       <nav>
         <h1 class="hidden">Navigation menu</h1>
         <ul class="layout-row">
@@ -12,6 +14,12 @@
           <router-link to="/contact" tag="li"><a>{{ $t('contact') }}</a></router-link>
         </ul>
       </nav>
+      <div class="social-icons">
+        <img src="../assets/icons/github.svg" alt="">
+        <img src="../assets/icons/twitter.svg" alt="">
+        <img src="../assets/icons/linkedin.svg" alt="">
+      </div>
+    </div>
     </footer>
 </template>
 
@@ -46,10 +54,19 @@ export default {
 };
 </script>
 <style scoped lang="stylus">
+  footer
+    overflow hidden
   .navigation
     position absolute
     bottom 0
     width 100%
+  .social-icons
+    img
+      display inline-block
+      padding 2px
+      max-width 15px
+      max-height 15px
+      opacity .5
   li
     &.router-link-active
       a
