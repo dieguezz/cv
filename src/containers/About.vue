@@ -112,8 +112,8 @@ export default {
     height calc(100vh - 78px)!important
     overflow hidden
   canvas
-    /*margin-left -50px!important
-    width: 110%!important*/
+    margin-left -50px!important
+    width: 110%!important
   .about-card
     position absolute
     display inline-block
