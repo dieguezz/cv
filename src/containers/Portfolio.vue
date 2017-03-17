@@ -1,10 +1,10 @@
 <template>
+  <transition appear name="fade">
   <div class="portfolio layout-column layout-align-center-center">
-    <h1>My awesome projects</h1>
-    <transition appear name="fade">
+      <h1>My awesome projects</h1>
       <gallery></gallery>
-    </transition>
   </div>
+</transition>
 </template>
 
 <script>
@@ -26,5 +26,6 @@ export default {
     color #fff
     font-family Raleway
     font-weight 500
+    font-size 12px
     text-transform uppercase
 </style>
