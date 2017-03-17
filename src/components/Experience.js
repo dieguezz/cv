@@ -22,6 +22,7 @@ export default Line.extend({
         }],
       },
       options: {
+        maintainAspectRatio: false,
         scales: {
           xAxes: [{
             display: false,
@@ -30,7 +31,7 @@ export default Line.extend({
             display: false,
             ticks: {
               max: 2070,
-              min: 1960,
+              min: 1980,
               stepSize: 0.5,
             },
           }],
@@ -60,7 +61,7 @@ export default Line.extend({
     const canvas = this.$el.querySelector('#line-chart');
     const ctx = canvas.getContext('2d');
     const gradient =
-    ctx.createLinearGradient(0, 300, 1100, 200);
+    ctx.createLinearGradient(0, 300, 1200, 200);
     gradient.addColorStop(0.000, 'rgba(0, 0, 0, 0)');
     gradient.addColorStop(0.112, 'rgba(220, 112, 103, 1.000)');
     gradient.addColorStop(0.880, 'rgba(220, 112, 103, 1.000)');

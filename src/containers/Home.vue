@@ -1,4 +1,5 @@
 <template>
+  <transition name="fade" appear>
 <div class="home layout-row layout-align-center-end">
   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" text-rendering="optimizeSpeed" viewBox="0 0 192 70.6" style="enable-background:new 0 0 192 70.6;" xml:space="preserve">
     <symbol id="s-text">
@@ -41,6 +42,7 @@
   </div>
   <router-link to="/about" tag="button" class="button-primary">{{ $t('aboutMe') }}</router-link>
 </div>
+</transition>
 </template>
 
 <script>
@@ -61,12 +63,6 @@ button
   height calc(100% - 78px)
   color #fff
   overflow hidden
-  animation fade 3s
-
-@keyframes fade {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
 
 .mask__shape
   fill: white

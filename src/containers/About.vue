@@ -4,16 +4,16 @@
     <div class="about-card">
       <transition appear name="fade">
       <nav>
-        <h1 class="hidden">Skills menu</h1>
+        <h1 class="hidden">{{ $t('skillsMenu') }}</h1>
         <ul class="layout-row layout-align-center-center p-t-3">
-          <router-link to="/about/skills" tag="li">SKILLS</router-link>
-          <router-link to="/about/experience" tag="li">EDUCATIONS & EXPERIENCE</router-link>
+          <router-link to="/about/experience" tag="li">{{ $t('educationAndExperience') }}</router-link>
+          <router-link to="/about/skills" tag="li">{{ $t('skills') }}</router-link>
         </ul>
       </nav>
     </transition>
-      <card  v-if="isExperience" :data="current.card"></card>
+      <card v-if="isExperience" :data="current.card"></card>
     </div>
-    <experience v-if="isExperience" :click="onDotClick"></experience>
+    <experience style="margin-left: -50px; width: 110%;" v-if="isExperience" :click="onDotClick"></experience>
     <skills v-if="!isExperience" :click="onDotClick"></skills>
   </div>
 </div>
@@ -109,12 +109,12 @@ export default {
 <style lang="stylus">
   .small
     position relative
-    height calc(100vh - 78px)!important
     overflow hidden
   canvas
-    margin-left -50px!important
-    width: 110%!important
+    height calc(100vh - 150px)!important
+    width: 100%!important
   .about-card
+    background-color #232127
     position absolute
     display inline-block
     text-align center

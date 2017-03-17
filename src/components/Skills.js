@@ -7,9 +7,9 @@ export default Line.extend({
   data() {
     return {
       chartData: {
-        labels: [0, 'Javascript', 'HTML', 'CSS', 'Angular.js 1 & 2', 'Vue.js', 'BackboneJS', 'Scrum', 'node.js', 'mongoDB', '0'],
+        labels: ['Javascript', 'HTML', 'CSS', 'Angular.js 1 & 2', 'Vue.js', 'BackboneJS', 'Scrum', 'node.js', 'mongoDB'],
         datasets: [{
-          data: [80, 80, 90, 92, 80, 75, 65, 87, 73, 82, 92],
+          data: [80, 90, 92, 80, 75, 65, 87, 73, 76],
           borderColor: '#dc7067',
           borderWidth: 4,
           pointBackgroundColor: '#00dac0',
@@ -20,29 +20,36 @@ export default Line.extend({
           pointHoverBorderWidth: 14,
           pointHoverBorderColor: 'rgba(0, 218, 192, 0.5)',
           backgroundColor: '#232127',
-          fill: false,
+          fillColor: '#fff',
+          fill: true,
         }],
       },
       options: {
+        maintainAspectRatio: false,
         scales: {
           xAxes: [{
             display: true,
-            position: 'top',
+            position: 'bottom',
             gridLines: {
               display: true,
               color: 'rgba(255, 255, 255, 0.1)',
+              zeroLineColor: 'rgba(255, 255, 255, 0.1)',
+              drawBorder: false,
+              drawOnChartArea: true,
+              drawTicks: true,
+              id: 'axis-x',
             },
           }],
           yAxes: [{
             display: true,
             ticks: {
               max: 100,
-              min: 50,
+              min: 60,
               stepSize: 5,
+              padding: 50,
             },
             gridLines: {
-              display: true,
-              color: 'rgba(255, 255, 255, 0.1)',
+              display: false,
             },
           }],
         },
@@ -50,39 +57,35 @@ export default Line.extend({
           display: false,
         },
         tooltips: {
-          enabled: false,
+          enabled: true,
+          intersect: false,
         },
       },
     };
   },
   methods: {
-    setColor(gradient) {
+    setColor(gradient, grd) {
       this.chartData.datasets[0].borderColor = gradient;
+      this.chartData.datasets[0].backgroundColor = grd;
     },
   },
   mounted() {
     this.renderChart(this.chartData, this.options);
-    /* eslint-disable no-underscore-dangle, no-console */
-    // this.chartData is created in the mixin
-    // .data.datasets[0]._meta[0].data[0]._view.disable = true
     this.chartData.datasets[0].data.push(0);
     this.chartData.datasets[0].data.push(0);
     const canvas = this.$el.querySelector('#line-chart');
     const ctx = canvas.getContext('2d');
     const gradient =
-      ctx.createLinearGradient(0, 300, 1100, 200);
+      ctx.createLinearGradient(0, 300, 1200, 200);
     gradient.addColorStop(0.000, 'rgba(0, 0, 0, 0)');
     gradient.addColorStop(0.112, 'rgba(220, 112, 103, 1.000)');
     gradient.addColorStop(0.880, 'rgba(220, 112, 103, 1.000)');
     gradient.addColorStop(1.000, 'rgba(0, 0, 0, 0)');
-    this.setColor(gradient);
-    this.renderChart(this.chartData, this.options);
 
-    canvas.onmousemove = (evt) => {
-      const el = this._chart.getElementAtEvent(evt)[0];
-      if (el) {
-        this.click(el._index);
-      }
-    };
+    const grd = ctx.createRadialGradient(100, 100, 0, 100, 0, 1200);
+    grd.addColorStop(0, 'rgba(151,187,205,0.7)');
+    grd.addColorStop(1, 'rgba(151,187,205,0)');
+    this.setColor(gradient, grd);
+    this.renderChart(this.chartData, this.options);
   },
 });

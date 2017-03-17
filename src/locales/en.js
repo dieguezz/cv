@@ -7,6 +7,9 @@ const lang = {
   developer: 'WEB DEVELOPER | UX LOVER',
   hello: 'Hello',
   iamAuthor: 'I\'m Diego Segura',
+  skillsMenu: 'Skills menu',
+  educationAndExperience: 'EDUCATIONS & EXPERIENCE',
+  skills: 'Skills',
   jobs: [
     {
       title: 'You can see all my experience here',
