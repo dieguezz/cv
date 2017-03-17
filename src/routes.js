@@ -12,7 +12,20 @@ export default [
   {
     path: '/about',
     name: 'About',
+    redirect: '/about/skills',
     component: About,
+    children: [
+      {
+        path: 'skills',
+        name: 'Skills',
+        component: About,
+      },
+      {
+        path: 'experience',
+        name: 'Experience',
+        component: About,
+      },
+    ],
   },
   {
     path: '/portfolio',

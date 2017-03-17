@@ -44,7 +44,7 @@ export default {
   },
   watch: {
     $route: function watchRoute(next) {
-      const activeEl = this.getActiveElement(next.fullPath);
+      const activeEl = this.getActiveElement(next.matched[0].path || '/');
       this.setInkBarPosition(activeEl);
     },
   },

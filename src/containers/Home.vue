@@ -72,7 +72,7 @@ button
   fill: white
 
 .shape--fill
-  fill: #16131a
+  fill: #232127
 
 .text--transparent
   fill: rgba(8, 105, 93, 0.29)
