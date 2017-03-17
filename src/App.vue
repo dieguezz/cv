@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <navigation></navigation>
+    <navigation class="max-width"></navigation>
   </div>
 </template>
 
@@ -22,9 +22,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 60px;
-  max-width: 1220px;
-  margin: 0 auto;
-  position: relative;
-  height: 100vh;
+  height: calc(100vh - 185px);
 }
 </style>

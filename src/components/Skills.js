@@ -49,7 +49,8 @@ export default Line.extend({
               padding: 50,
             },
             gridLines: {
-              display: false,
+              display: true,
+              drawBorder: true,
             },
           }],
         },

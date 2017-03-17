@@ -1,5 +1,5 @@
 <template>
-<div class="about">
+<div class="about max-width">
   <div class="small">
     <div class="about-card">
       <transition appear name="fade">
