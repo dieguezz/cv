@@ -2,7 +2,6 @@
 <div class="about max-width">
   <div class="small">
     <div class="about-card">
-      <transition appear name="fade">
       <nav>
         <h1 class="hidden">{{ $t('skillsMenu') }}</h1>
         <ul class="layout-row layout-align-center-center p-t-3">
@@ -10,7 +9,6 @@
           <router-link to="/about/skills" tag="li">{{ $t('skills') }}</router-link>
         </ul>
       </nav>
-    </transition>
       <card v-if="isExperience" :data="current.card"></card>
     </div>
     <experience style="margin-left: -50px; width: 110%;" v-if="isExperience" :click="onDotClick"></experience>

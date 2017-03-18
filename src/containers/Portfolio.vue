@@ -1,10 +1,8 @@
 <template>
-  <transition appear name="fade">
   <div class="portfolio layout-column layout-align-center-center">
       <h1>My awesome projects</h1>
       <gallery></gallery>
   </div>
-</transition>
 </template>
 
 <script>

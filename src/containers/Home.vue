@@ -57,7 +57,7 @@ export default {
 
 button
   position absolute
-  top 70%
+  top 90%
 .home
   position relative
   height calc(100% - 78px)

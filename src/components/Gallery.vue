@@ -1,4 +1,5 @@
 <template>
+  <transition appear name="fade">
   <div class="gallery layout-row layout-align-center-end">
     <div class="col layout-column flex-25">
       <img src="http://lorempixel.com/500/500/technics/1" alt="">
@@ -18,6 +19,7 @@
       <img src="http://lorempixel.com/500/500/technics/6" alt="">
     </div>
   </div>
+</transition>
 </template>
 <script>
 export default {
@@ -30,6 +32,13 @@ export default {
     width 100vw
   img
     object-fit cover
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    transition-duration: 0.3s;
+    transition-property transform
+    &:hover
+      transform: scale(1.1);
   .col
     height 70vh
     overflow hidden
@@ -47,5 +56,4 @@ export default {
         max-height 33%
         &:first-child
           max-height 35%
-
 </style>
