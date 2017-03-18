@@ -14,6 +14,7 @@ import App from './App';
 const router = new VueRouter({
   routes,
   mode: 'history',
+  base: '/cv/',
 });
 
 Vue.config.productionTip = false;
